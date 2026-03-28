@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Recomendar Película</title>
+<link rel="stylesheet" href="estilo.css">
+</head>
+
+<body>
+
+<nav>
+<a href="../index.html">Inicio</a>
+<a href="peliculas.html">Películas</a>
+<a href="recomendar.html">Recomendar</a>
+<a href="opiniones.html">Opiniones</a>
+</nav>
+<div class="contenedor">
+
+<h2>Recomendación Aleatoria</h2>
+
+<button onclick="recomendar()">Dame una película</button>
+
+<div id="resultado"></div>
+
+</div>
+
+<script>
+
+var peliculas = [
+
+{
+titulo:"coraline",
+imagen:"https://moviepostermexico.com/cdn/shop/products/coraline_xxlg_1080x.jpg?v=1606974547"
+},
+
+{
+titulo:"El Rey León",
+imagen:"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiussfOt1yv2VwCjW3Kmu2Sv0OI9xtaF5qdkEyRrZqlF_lX7_USOqXGnvQlQyHJuMocqQQdJcnDNpe3QshdLSmmLSfmlzIIKEdwpB19yNCIYclIozHU5DE_TJ1CvNe6gMIhwxB78w/s1600/Favreau-The+Lion+King.jpg"
+},
+
+{
+titulo:"La la land",
+imagen:"https://www.americadvd.cl/wp-content/uploads/imagenes_productos/23530.jpg"
+},
+
+{
+titulo:"El Conjuro",
+imagen:"https://loscritters.wordpress.com/wp-content/uploads/2013/09/conjuro-poster.jpg"
+},
+
+{
+titulo:"Historias cruzadas",
+imagen:"https://www.americadvd.cl/wp-content/uploads/91LBiJXCIZL._SL1500_-1.jpg"
+}
+
+
+
+];
+
+function recomendar(){
+
+var numero = Math.floor(Math.random()*peliculas.length);
+
+var peli = peliculas[numero];
+
+document.getElementById("resultado").innerHTML =
+"<h3>"+peli.titulo+"</h3>" +
+"<img src='"+peli.imagen+"' width='200'>";
+
+}
+
+</script>
+
+</body>
+</html>
